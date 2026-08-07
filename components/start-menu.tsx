@@ -18,6 +18,7 @@ type StartMenuProps = {
   userName: string
   onLogin: () => void
   onLogout: () => void
+  onTurnOff: () => void
 }
 
 function MenuItem({
@@ -53,6 +54,7 @@ export function StartMenu({
   userName,
   onLogin,
   onLogout,
+  onTurnOff,
 }: StartMenuProps) {
   const go = (id: string) => {
     onLaunch(id)
@@ -144,18 +146,27 @@ export function StartMenu({
             onClose()
           }}
         >
-          <span className="grid h-6 w-6 place-items-center rounded-sm bg-[#3c9d1c] text-white">
-            {isGuest ? '→' : '←'}
-          </span>
+          <img
+            src="/xp-key.png"
+            alt=""
+            aria-hidden="true"
+            className="h-6 w-6 object-contain"
+          />
           {isGuest ? 'Log On' : 'Log Off'}
         </button>
         <button
           className="flex items-center gap-1.5 text-[12px] text-white hover:underline"
-          onClick={onClose}
+          onClick={() => {
+            onClose()
+            onTurnOff()
+          }}
         >
-          <span className="grid h-6 w-6 place-items-center rounded-sm bg-[#e8792a] text-white">
-            ⏻
-          </span>
+          <img
+            src="/xp-turnoff.png"
+            alt=""
+            aria-hidden="true"
+            className="h-6 w-6 object-contain"
+          />
           Turn Off
         </button>
       </div>

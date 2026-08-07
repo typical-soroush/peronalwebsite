@@ -8,6 +8,7 @@ import { PaintApp } from './paint-app'
 import { RageBaitApp } from './ragebait-app'
 import { StartMenu } from './start-menu'
 import { Taskbar, type TaskItem } from './taskbar'
+import { WelcomeScreen } from './welcome-screen'
 import {
   AboutContent,
   ContactContent,
@@ -112,6 +113,7 @@ export function XpDesktop() {
   const [openCount, setOpenCount] = useState(0)
   const [userName, setUserName] = useState('Guest')
   const [loginOpen, setLoginOpen] = useState(false)
+  const [loggedOff, setLoggedOff] = useState(false)
 
   const topId = useMemo(() => {
     const visible = windows.filter((w) => !w.minimized)
@@ -299,6 +301,10 @@ export function XpDesktop() {
           userName={userName}
           onLogin={() => setLoginOpen(true)}
           onLogout={() => setUserName('Guest')}
+          onTurnOff={() => {
+            setStartOpen(false)
+            setLoggedOff(true)
+          }}
         />
       ) : null}
 
@@ -321,6 +327,11 @@ export function XpDesktop() {
         tasks={tasks}
         onTaskClick={taskClick}
       />
+
+      {/* Log-off / welcome screen */}
+      {loggedOff ? (
+        <WelcomeScreen onLogOn={() => setLoggedOff(false)} />
+      ) : null}
     </main>
   )
 }
