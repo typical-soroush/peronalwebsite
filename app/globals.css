@@ -1,0 +1,348 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: Tahoma, Verdana, Geneva, 'Segoe UI', sans-serif;
+  --color-xp-blue: var(--xp-blue);
+  --color-xp-blue-dark: var(--xp-blue-dark);
+  --color-xp-title: var(--xp-title);
+  --color-xp-title-2: var(--xp-title-2);
+  --color-xp-face: var(--xp-face);
+  --color-xp-green: var(--xp-green);
+  --color-xp-green-dark: var(--xp-green-dark);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  /* Windows XP Luna palette */
+  --xp-blue: #245edb;
+  --xp-blue-dark: #003ac6;
+  --xp-title: #0058ee;
+  --xp-title-2: #3f8cf3;
+  --xp-face: #ece9d8;
+  --xp-green: #3c9d1c;
+  --xp-green-dark: #2c7a10;
+  --background: #3a6ea5;
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+  }
+}
+
+/* ---------- Windows XP chrome ---------- */
+
+/* Bliss desktop */
+.xp-desktop {
+  background-image: url('/bliss.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* XP window frame */
+.xp-window {
+  background: var(--xp-face);
+  border: 1px solid #0831d9;
+  border-radius: 8px 8px 0 0;
+  box-shadow:
+    inset 0 0 0 1px #4a90ff,
+    0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Title bar gradient */
+.xp-titlebar {
+  background: linear-gradient(
+    180deg,
+    #0058ee 0%,
+    #3f8cf3 8%,
+    #0058ee 40%,
+    #0053e5 88%,
+    #0148d6 100%
+  );
+  border-radius: 7px 7px 0 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.xp-titlebar-inactive {
+  background: linear-gradient(180deg, #7ba2e0 0%, #96b6e6 50%, #7ba2e0 100%);
+}
+
+/* Title bar caption buttons */
+.xp-caption-btn {
+  width: 21px;
+  height: 21px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+}
+.xp-caption-close {
+  background: linear-gradient(180deg, #f7a37b 0%, #e5502a 45%, #cf3a17 100%);
+}
+.xp-caption-min,
+.xp-caption-max {
+  background: linear-gradient(180deg, #93b9f5 0%, #2c68da 45%, #1a53c8 100%);
+}
+
+/* Beveled 3D button (classic) */
+.xp-button {
+  background: linear-gradient(180deg, #fbfbfb 0%, #ece9d8 45%, #d6d2bd 100%);
+  border: 1px solid #003c74;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 1px #fff;
+  padding: 3px 12px;
+  color: #000;
+}
+.xp-button:hover {
+  background: linear-gradient(180deg, #fff 0%, #f4f2e4 45%, #ddd9c3 100%);
+}
+.xp-button:active {
+  background: linear-gradient(180deg, #d6d2bd 0%, #ece9d8 100%);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Sunken inset panel */
+.xp-inset {
+  border: 1px solid #7f9db9;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+/* Taskbar */
+.xp-taskbar {
+  background: linear-gradient(
+    180deg,
+    #245edb 0%,
+    #3f8cf3 8%,
+    #245edb 40%,
+    #1941a5 88%,
+    #17459f 100%
+  );
+  border-top: 1px solid #0831d9;
+  box-shadow: inset 0 1px 0 #4a90ff;
+}
+
+/* Start button */
+.xp-start {
+  background: linear-gradient(180deg, #4a9d3f 0%, #3c9d1c 45%, #2c7a10 100%);
+  border-radius: 0 10px 10px 0 / 0 12px 12px 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset -2px 0 4px rgba(0, 0, 0, 0.2);
+}
+.xp-start:hover {
+  background: linear-gradient(180deg, #5cb84f 0%, #46b322 45%, #34901a 100%);
+}
+.xp-start-active {
+  background: linear-gradient(180deg, #2c7a10 0%, #3c9d1c 55%, #4a9d3f 100%);
+}
+
+/* Taskbar running-app button */
+.xp-task-btn {
+  background: linear-gradient(180deg, #4993f4 0%, #3072e8 45%, #285fd0 100%);
+  border: 1px solid #2255c5;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+.xp-task-btn-active {
+  background: linear-gradient(180deg, #1d4fb8 0%, #2860cf 100%);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* System tray */
+.xp-tray {
+  background: linear-gradient(180deg, #199be2 0%, #1592d4 50%, #0e7ac0 100%);
+  border-left: 1px solid #092e91;
+  box-shadow: inset 1px 0 0 #3aa8e8;
+}
+
+/* Start menu */
+.xp-startmenu {
+  border: 1px solid #0831d9;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.xp-startmenu-header {
+  background: linear-gradient(180deg, #1c60e0 0%, #3f8cf3 40%, #245edb 100%);
+  border-bottom: 2px solid #eb7622;
+}
+
+/* Desktop icon label */
+.xp-icon-label {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+.xp-icon-selected {
+  background: rgba(49, 106, 197, 0.5);
+  outline: 1px dotted rgba(255, 255, 255, 0.7);
+}
+.xp-icon-selected .xp-icon-img {
+  filter: drop-shadow(0 0 0 #316ac5);
+}
+
+/* Custom scrollbar for XP windows */
+.xp-scroll::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+.xp-scroll::-webkit-scrollbar-track {
+  background: #d4d0c8;
+}
+.xp-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #b7d0f5 0%, #6f9fe8 100%);
+  border: 1px solid #3c74c8;
+  border-radius: 2px;
+}
