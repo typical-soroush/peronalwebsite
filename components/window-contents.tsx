@@ -274,10 +274,11 @@ export function ResumeContent() {
 
 export function ContactContent() {
   const links = [
-    { label: 'Email', value: 'hello@chudy.dev', href: 'mailto:hello@chudy.dev' },
-    { label: 'GitHub', value: 'github.com/chudy', href: 'https://github.com' },
-    { label: 'X / Twitter', value: '@chudy', href: 'https://x.com' },
-    { label: 'LinkedIn', value: 'in/chudy', href: 'https://linkedin.com' },
+    {
+      label: 'LinkedIn',
+      value: 'in/soroush-amirostovar',
+      href: 'https://www.linkedin.com/in/soroush-amirostovar-ab5b9a193',
+    },
   ]
   return (
     <div className="flex flex-col gap-3">
