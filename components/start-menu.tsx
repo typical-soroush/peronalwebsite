@@ -144,9 +144,12 @@ export function StartMenu({
             onClose()
           }}
         >
-          <span className="grid h-6 w-6 place-items-center rounded-sm bg-[#3c9d1c] text-white">
-            {isGuest ? '→' : '←'}
-          </span>
+          <img
+            src="/xp-key.png"
+            alt=""
+            aria-hidden="true"
+            className="h-6 w-6 object-contain"
+          />
           {isGuest ? 'Log On' : 'Log Off'}
         </button>
         <button

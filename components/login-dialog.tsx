@@ -18,7 +18,7 @@ export function LoginDialog({ currentName, onLogin, onClose }: LoginDialogProps)
 
   return (
     <div
-      className="absolute inset-0 z-[10000] grid place-items-center bg-black/30"
+      className="absolute inset-0 z-[10000] grid place-items-center bg-neutral-500/70 backdrop-grayscale"
       onClick={onClose}
     >
       <div
@@ -46,10 +46,10 @@ export function LoginDialog({ currentName, onLogin, onClose }: LoginDialogProps)
         <div className="flex flex-col gap-3 p-4">
           <div className="flex items-center gap-3">
             <img
-              src="/xp-about.png"
+              src="/xp-key.png"
               alt=""
               aria-hidden="true"
-              className="h-12 w-12 rounded-sm border border-[#7f9db9] bg-white object-contain p-0.5"
+              className="h-12 w-12 object-contain"
             />
             <p className="text-[12px] leading-relaxed text-neutral-700">
               Type a user name to personalize your session, or continue as{' '}
