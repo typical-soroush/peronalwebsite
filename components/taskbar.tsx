@@ -37,6 +37,95 @@ function Clock() {
   )
 }
 
+function TraySpeaker() {
+  const [open, setOpen] = useState(false)
+  const [muted, setMuted] = useState(false)
+  const [volume, setVolume] = useState(75)
+
+  useEffect(() => {
+    if (!open) return
+    const close = () => setOpen(false)
+    window.addEventListener('click', close)
+    return () => window.removeEventListener('click', close)
+  }, [open])
+
+  return (
+    <div className="relative flex items-center">
+      <button
+        onClick={(e) => {
+          e.stopPropagation()
+          setOpen((o) => !o)
+        }}
+        className="grid h-5 w-5 place-items-center rounded-sm hover:bg-white/20"
+        aria-label="Volume — play song"
+        aria-haspopup="dialog"
+        aria-expanded={open}
+      >
+        <img
+          src="/xp-speaker.png"
+          alt=""
+          aria-hidden="true"
+          className="h-4 w-4 object-contain"
+        />
+      </button>
+
+      {open ? (
+        <div
+          className="xp-volume-popup absolute bottom-[calc(100%+8px)] right-0 w-[260px] p-2"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="mb-1 px-1 text-center text-[12px] font-bold text-neutral-700">
+            Volume
+          </div>
+
+          {muted ? (
+            <div className="grid h-[152px] place-items-center rounded-[10px] border border-neutral-400/60 bg-neutral-200 text-center text-[12px] text-neutral-500">
+              Muted — check the box
+              <br />
+              below to resume.
+            </div>
+          ) : (
+            <iframe
+              title="Spotify player"
+              src="https://open.spotify.com/embed/track/0iPDqpgkWjXmxVTWnCxt0Y?utm_source=generator&autoplay=1"
+              width="100%"
+              height="152"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              className="rounded-[10px]"
+            />
+          )}
+
+          <div className="mt-2 flex items-center gap-2 px-1">
+            <span className="text-[11px] text-neutral-600">Low</span>
+            <input
+              type="range"
+              min={0}
+              max={100}
+              value={volume}
+              onChange={(e) => setVolume(Number(e.target.value))}
+              className="xp-volume-slider h-1 flex-1"
+              aria-label="Volume level"
+            />
+            <span className="text-[11px] text-neutral-600">High</span>
+          </div>
+
+          <label className="mt-2 flex cursor-pointer items-center gap-1.5 px-1 text-[12px] text-neutral-700">
+            <input
+              type="checkbox"
+              checked={muted}
+              onChange={(e) => setMuted(e.target.checked)}
+              className="h-3.5 w-3.5"
+            />
+            Mute
+          </label>
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 type TaskbarProps = {
   startOpen: boolean
   onToggleStart: () => void
@@ -88,6 +177,7 @@ export function Taskbar({
 
       {/* System tray */}
       <div className="xp-tray flex items-center gap-2 px-3">
+        <TraySpeaker />
         <Clock />
       </div>
     </div>
