@@ -37,6 +37,60 @@ function Clock() {
   )
 }
 
+function TraySpeaker() {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (!open) return
+    const close = () => setOpen(false)
+    window.addEventListener('click', close)
+    return () => window.removeEventListener('click', close)
+  }, [open])
+
+  return (
+    <div className="relative flex items-center">
+      <button
+        onClick={(e) => {
+          e.stopPropagation()
+          setOpen((o) => !o)
+        }}
+        className="grid h-5 w-5 place-items-center rounded-sm hover:bg-white/20"
+        aria-label="Volume — play song"
+        aria-haspopup="dialog"
+        aria-expanded={open}
+      >
+        <img
+          src="/xp-speaker.png"
+          alt=""
+          aria-hidden="true"
+          className="h-4 w-4 object-contain"
+        />
+      </button>
+
+      {open ? (
+        <div
+          className="xp-volume-popup absolute bottom-[calc(100%+8px)] right-0 w-[260px] p-2"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="mb-2 px-1 text-center text-[12px] font-bold text-neutral-700">
+            Now Playing
+          </div>
+          <iframe
+            title="Spotify player"
+            src="https://open.spotify.com/embed/track/0iPDqpgkWjXmxVTWnCxt0Y?utm_source=generator&autoplay=1"
+            width="100%"
+            height="152"
+            frameBorder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            className="rounded-[10px]"
+          />
+        </div>
+      ) : null}
+    </div>
+  )
+}
+
 type TaskbarProps = {
   startOpen: boolean
   onToggleStart: () => void
@@ -88,6 +142,7 @@ export function Taskbar({
 
       {/* System tray */}
       <div className="xp-tray flex items-center gap-2 px-3">
+        <TraySpeaker />
         <Clock />
       </div>
     </div>
