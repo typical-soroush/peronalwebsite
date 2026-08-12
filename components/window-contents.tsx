@@ -105,7 +105,7 @@ export function AboutContent() {
 export function ResumeContent() {
   const experience = [
     {
-      role: 'Client Experience → AML → Investment Compliance',
+      role: 'AML → Investment Compliance',
       org: 'Wealthsimple',
       period: 'Jun 2024 — Present',
       detail:
@@ -151,7 +151,7 @@ export function ResumeContent() {
   const education = [
     {
       org: 'Toronto Metropolitan University',
-      detail: 'BTech — GPA 3.4',
+      detail: 'BTech',
       year: 'Apr 2022',
     },
     {
@@ -178,7 +178,7 @@ export function ResumeContent() {
             Soroush Amirostovar
           </h1>
           <p className="text-[12px] font-bold text-neutral-700">
-            Product · Compliance · Customer Experience
+            Product · Compliance
           </p>
         </div>
         <span className="text-[11px] text-neutral-600">Toronto, ON</span>
@@ -186,7 +186,7 @@ export function ResumeContent() {
 
       <p className="text-[12px] text-neutral-800">
         {
-          'A builder who turns ambiguous problems into shipped product. 2+ years at Wealthsimple across customer experience, anti-money laundering, and investment compliance. I take ideas from 0 to validated, kill weak ones fast, and double down on what works.'
+          'A builder who turns ambiguous problems into shipped product. 2+ years at Wealthsimple across anti-money laundering and investment compliance. I take ideas from 0 to validated, kill weak ones fast, and double down on what works.'
         }
       </p>
 
@@ -253,20 +253,17 @@ export function ResumeContent() {
       </section>
 
       <div className="mt-1 flex items-center gap-2 border-t border-neutral-400/60 pt-3">
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={() =>
+            window.dispatchEvent(
+              new CustomEvent('xp:open', { detail: 'contact' }),
+            )
+          }
           className="xp-button inline-flex items-center gap-1.5 text-[12px] font-normal"
         >
-          Download PDF
-        </a>
-        <a
-          href="mailto:soroushamirostovar@gmail.com"
-          className="xp-button inline-flex items-center gap-1.5 text-[12px] font-normal"
-        >
-          Email
-        </a>
+          Contact
+        </button>
       </div>
     </div>
   )
