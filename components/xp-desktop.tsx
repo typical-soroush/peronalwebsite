@@ -143,6 +143,13 @@ export function XpDesktop() {
     [apps, openCount],
   )
 
+  // Allow window contents (e.g. the Resume's Contact button) to open windows.
+  useEffect(() => {
+    const handler = (e: Event) => openWindow((e as CustomEvent<string>).detail)
+    window.addEventListener('xp:open', handler)
+    return () => window.removeEventListener('xp:open', handler)
+  }, [openWindow])
+
   const focusWindow = useCallback((id: string) => {
     setWindows((prev) => {
       const w = prev.find((x) => x.id === id)
