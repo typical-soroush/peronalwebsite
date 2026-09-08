@@ -29,4 +29,17 @@ export const projects: Project[] = [
     sourceUrl: 'https://bench-by-the-hour.lovable.app',
     accent: '#b5502f',
   },
+  {
+    id: 'tpm-archive',
+    name: 'TPM Archive',
+    shortName: 'TPM Archive',
+    tagline: 'Archive of The Persian Magazine.',
+    description: 'Archive of The Persian Magazine',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    year: '2026',
+    image: '/projects/tpm-archive.png',
+    liveUrl: 'https://tpmarchive.vercel.app',
+    sourceUrl: 'https://tpmarchive.vercel.app',
+    accent: '#e2622a',
+  },
 ]
