@@ -29,4 +29,18 @@ export const projects: Project[] = [
     sourceUrl: 'https://bench-by-the-hour.lovable.app',
     accent: '#b5502f',
   },
+  {
+    id: 'tpm-archive',
+    name: 'TPM Archive',
+    shortName: 'TPM Archive',
+    tagline: 'Y2K street systems — Editorial Archive, Vol. 01.',
+    description:
+      'TPM Archive is a fictional streetwear label explored as an interactive editorial archive. It stages Tehran street utility through field-captured motion and archive-coded styling — modular silhouettes, a chrome-and-asphalt palette, and a Y2K "street systems" interface with catalog indexing, contact-sheet field captures, and a built-in track player. FW—2026, Drop 01.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    year: '2026',
+    image: '/projects/tpm-archive.png',
+    liveUrl: 'https://tpmarchive.vercel.app',
+    sourceUrl: 'https://tpmarchive.vercel.app',
+    accent: '#e2622a',
+  },
 ]
