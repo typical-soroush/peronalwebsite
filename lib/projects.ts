@@ -33,9 +33,8 @@ export const projects: Project[] = [
     id: 'tpm-archive',
     name: 'TPM Archive',
     shortName: 'TPM Archive',
-    tagline: 'Y2K street systems — Editorial Archive, Vol. 01.',
-    description:
-      'TPM Archive is a fictional streetwear label explored as an interactive editorial archive. It stages Tehran street utility through field-captured motion and archive-coded styling — modular silhouettes, a chrome-and-asphalt palette, and a Y2K "street systems" interface with catalog indexing, contact-sheet field captures, and a built-in track player. FW—2026, Drop 01.',
+    tagline: 'Archive of The Persian Magazine.',
+    description: 'Archive of The Persian Magazine',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     year: '2026',
     image: '/projects/tpm-archive.png',
