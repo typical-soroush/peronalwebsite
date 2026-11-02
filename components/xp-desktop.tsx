@@ -14,6 +14,7 @@ import {
   ContactContent,
   ProjectContent,
   ResumeContent,
+  SubstackContent,
 } from './window-contents'
 import {
   FolderIcon,
@@ -22,6 +23,7 @@ import {
   RageBaitIcon,
   RecycleIcon,
   ResumeIcon,
+  SubstackIcon,
   UserIcon,
   WindowGlyph,
 } from './xp-icons'
@@ -50,6 +52,12 @@ function useApps(): Record<string, AppMeta> {
         width: 420,
         height: 380,
         render: () => <ContactContent />,
+      },
+      substack: {
+        title: 'Substack — @typicaluser',
+        width: 400,
+        height: 300,
+        render: () => <SubstackContent />,
       },
       resume: {
         title: 'Resume — Soroush Amirostovar',
@@ -196,6 +204,7 @@ export function XpDesktop() {
         icon: <FolderIcon accent={p.accent} />,
       })),
       { id: 'resume', label: 'Resume', icon: <ResumeIcon /> },
+      { id: 'substack', label: 'Substack', icon: <SubstackIcon /> },
       { id: 'paint', label: 'Paint', icon: <PaintIcon /> },
       { id: 'ragebait', label: 'Rage Bait', icon: <RageBaitIcon /> },
       { id: 'about', label: 'About Me', icon: <UserIcon /> },
