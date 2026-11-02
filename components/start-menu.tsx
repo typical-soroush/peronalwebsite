@@ -9,6 +9,7 @@ import {
   RageBaitIcon,
   RecycleIcon,
   ResumeIcon,
+  SubstackIcon,
   UserIcon,
 } from './xp-icons'
 
@@ -116,6 +117,11 @@ export function StartMenu({
             icon={<ResumeIcon size={28} />}
             title="Resume"
             onClick={() => go('resume')}
+          />
+          <MenuItem
+            icon={<SubstackIcon size={28} />}
+            title="Substack"
+            onClick={() => go('substack')}
           />
           <MenuItem
             icon={<PaintIcon size={28} />}

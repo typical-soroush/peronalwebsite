@@ -66,6 +66,22 @@ export function MailIcon({ size = 44 }: IconProps) {
   )
 }
 
+/** Substack — orange bookmark logo (bitmap). */
+export function SubstackIcon({ size = 44 }: IconProps) {
+  return (
+    <img
+      src="/icons/substack.png"
+      width={size}
+      height={size}
+      alt=""
+      aria-hidden="true"
+      draggable={false}
+      className="pointer-events-none select-none rounded-[6px] object-contain"
+      style={{ width: size, height: size }}
+    />
+  )
+}
+
 /** Recycle Bin — glassy Windows XP bin (bitmap). */
 export function RecycleIcon({ size = 44 }: IconProps) {
   return (

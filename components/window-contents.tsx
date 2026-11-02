@@ -269,6 +269,37 @@ export function ResumeContent() {
   )
 }
 
+export function SubstackContent() {
+  return (
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-3">
+        <img
+          src="/icons/substack.png"
+          alt="Substack logo"
+          className="h-14 w-14 shrink-0 rounded-md border border-neutral-300 bg-white object-contain"
+        />
+        <div className="flex flex-col">
+          <h2 className="text-[16px] font-bold text-neutral-900">Substack</h2>
+          <p className="text-[12px] text-neutral-600">@typicaluser</p>
+        </div>
+      </div>
+      <p className="xp-inset rounded-sm px-3 py-3 leading-relaxed text-neutral-800">
+        My unsolicited thoughts in writing.
+      </p>
+      <div className="flex items-center gap-2 border-t border-neutral-400/60 pt-3">
+        <a
+          href="https://substack.com/@typicaluser/posts"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="xp-button inline-flex items-center gap-1.5 text-[12px] font-normal"
+        >
+          Read my posts
+        </a>
+      </div>
+    </div>
+  )
+}
+
 export function ContactContent() {
   const links = [
     {
