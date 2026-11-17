@@ -61,7 +61,7 @@ function useApps(): Record<string, AppMeta> {
         width: 620,
         height: 700,
         accent: '#c91f26',
-        bodyClassName: 'bg-[#111] p-0 text-white',
+        bodyClassName: 'bg-white p-0 text-black',
         render: () => <TpmContent />,
       },
       substack: {
