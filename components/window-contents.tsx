@@ -25,7 +25,7 @@ function XpButton({
 
 export function TpmContent() {
   return (
-    <div className="flex min-h-full flex-col gap-4 bg-black p-4 text-white">
+    <div className="flex min-h-full flex-col gap-4 bg-[#111] p-4 text-white">
       <div className="flex items-center justify-between gap-3">
         <h1 className="text-lg font-bold tracking-wide">TPM</h1>
         <a
@@ -34,11 +34,11 @@ export function TpmContent() {
           rel="noopener noreferrer"
           aria-label="Visit TPM Shop on Shopify"
           title="Visit TPM Shop"
-          className="block overflow-hidden rounded-sm bg-black transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="block overflow-hidden rounded-sm bg-[#111] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           <video
             src="/projects/tpm-issue-06.mp4"
-            className="size-20 bg-black object-cover"
+            className="size-20 bg-[#111] object-cover"
             autoPlay
             muted
             loop
@@ -48,15 +48,6 @@ export function TpmContent() {
           />
         </a>
       </div>
-
-      <video
-        className="max-h-[240px] w-full bg-black object-contain"
-        src="/projects/tpm-issue-06.mp4"
-        controls
-        playsInline
-        preload="metadata"
-        aria-label="TPM Issue 06 video"
-      />
 
       <p className="leading-relaxed text-neutral-200">
         At TPM, I make sure everything runs smoothly so we can focus on the
