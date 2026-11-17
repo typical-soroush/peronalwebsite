@@ -29,17 +29,22 @@ export function TpmContent() {
       <div className="flex items-center justify-between gap-3">
         <h1 className="text-lg font-bold tracking-wide">TPM</h1>
         <a
-          href="https://thepersianmag.net/"
+          href="https://mxzkvc-ac.myshopify.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Visit TPM Shop at The Persian Magazine"
+          aria-label="Visit TPM Shop on Shopify"
           title="Visit TPM Shop"
-          className="block rounded-sm bg-white p-1.5 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="block overflow-hidden rounded-sm bg-black transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
-          <img
-            src="/projects/tpm-logo.jpg"
-            alt="TPM Shop"
-            className="size-20 object-contain"
+          <video
+            src="/projects/tpm-issue-06.mp4"
+            className="size-20 bg-black object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden="true"
           />
         </a>
       </div>
