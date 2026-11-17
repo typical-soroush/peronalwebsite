@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import type { Project } from '@/lib/projects'
+import { FolderIcon } from './xp-icons'
 
 function XpButton({
   children,
@@ -19,6 +20,144 @@ function XpButton({
     >
       {children}
     </a>
+  )
+}
+
+export function TpmContent() {
+  const description =
+    'At TPM, I make sure everything runs smoothly so we can focus on the creative side. Some call me the COO, but I like to think of it as being a handyman—from changing a lightbulb to setting up ClickUp workflows and automating our systems. TPM SHOP is my favourite, though! From ideation and product building all the way to marketing and fulfilment, I run it all. It’s like a toy store!'
+
+  return (
+    <div className="grid min-h-full grid-cols-1 bg-white text-[#222] min-[540px]:grid-cols-[180px_minmax(0,1fr)]">
+      <aside className="flex flex-col gap-3 bg-gradient-to-b from-[#dcecff] to-[#a9c8f0] p-3 text-[11px] text-[#12335b]">
+        <section className="overflow-hidden rounded-t-md border border-[#9bb8df] bg-[#f1f6fd]">
+          <h2 className="bg-gradient-to-r from-[#78a9e8] to-[#c2dcf7] px-2 py-1 font-bold text-[#12335b]">
+            TPM Tasks
+          </h2>
+          <div className="flex flex-col gap-1.5 p-2">
+            <a
+              href="https://mxzkvc-ac.myshopify.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0756a4] underline-offset-2 hover:underline"
+            >
+              Visit TPM Shop
+            </a>
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(
+                  new CustomEvent('xp:open', { detail: 'tpm-archive' }),
+                )
+              }
+              className="text-left text-[#0756a4] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0756a4]"
+            >
+              Open TPM Archive
+            </button>
+          </div>
+        </section>
+
+        <section className="overflow-hidden rounded-t-md border border-[#9bb8df] bg-[#f1f6fd]">
+          <h2 className="bg-gradient-to-r from-[#78a9e8] to-[#c2dcf7] px-2 py-1 font-bold text-[#12335b]">
+            Other Places
+          </h2>
+          <div className="flex flex-col gap-1.5 p-2">
+            <a
+              href="https://thepersianmag.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0756a4] underline-offset-2 hover:underline"
+            >
+              The Persian Magazine
+            </a>
+            <a
+              href="https://www.instagram.com/thepersianmag/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0756a4] underline-offset-2 hover:underline"
+            >
+              Instagram
+            </a>
+          </div>
+        </section>
+
+        <section className="overflow-hidden rounded-t-md border border-[#9bb8df] bg-[#f1f6fd]">
+          <h2 className="bg-gradient-to-r from-[#78a9e8] to-[#c2dcf7] px-2 py-1 font-bold text-[#12335b]">
+            Details
+          </h2>
+          <p className="p-2 leading-relaxed">{description}</p>
+        </section>
+      </aside>
+
+      <main className="min-w-0 bg-[#111] p-4 text-white">
+        <header className="mb-5 border-b border-neutral-700 pb-3">
+          <h1 className="text-sm font-bold text-white">TPM</h1>
+          <p className="mt-1 text-[11px] text-neutral-400">
+            Files and links from The Persian Magazine
+          </p>
+        </header>
+
+        <section aria-labelledby="tpm-files-heading">
+          <h2
+            id="tpm-files-heading"
+            className="mb-4 text-[12px] font-bold text-neutral-200"
+          >
+            Files Stored on This Computer
+          </h2>
+          <div className="grid grid-cols-2 gap-x-3 gap-y-5">
+            <button
+              type="button"
+              onClick={() =>
+                window.dispatchEvent(
+                  new CustomEvent('xp:open', { detail: 'tpm-archive' }),
+                )
+              }
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
+            >
+              <FolderIcon size={40} />
+              <span className="text-[11px]">TPM Archive</span>
+            </button>
+            <a
+              href="https://mxzkvc-ac.myshopify.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit TPM Shop on Shopify"
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
+            >
+              <video
+                src="/projects/tpm-issue-06.mp4"
+                className="size-20 rounded-sm bg-[#111] object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-hidden="true"
+              />
+              <span className="text-[11px]">TPM SHOP</span>
+            </a>
+            <a
+              href="https://thepersianmag.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
+            >
+              <FolderIcon size={40} />
+              <span className="text-[11px]">The Persian Magazine</span>
+            </a>
+            <a
+              href="https://www.instagram.com/thepersianmag/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
+            >
+              <FolderIcon size={40} />
+              <span className="text-[11px]">Instagram @thepersianmag</span>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
   )
 }
 

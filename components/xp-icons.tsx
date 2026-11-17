@@ -66,6 +66,22 @@ export function MailIcon({ size = 44 }: IconProps) {
   )
 }
 
+/** TPM — supplied magazine wordmark. */
+export function TpmIcon({ size = 44 }: IconProps) {
+  return (
+    <img
+      src="/projects/tpm-logo.jpg"
+      width={size}
+      height={size}
+      alt=""
+      aria-hidden="true"
+      draggable={false}
+      className="pointer-events-none select-none rounded-sm object-contain"
+      style={{ width: size, height: size }}
+    />
+  )
+}
+
 /** Substack — orange bookmark logo (bitmap). */
 export function SubstackIcon({ size = 44 }: IconProps) {
   return (

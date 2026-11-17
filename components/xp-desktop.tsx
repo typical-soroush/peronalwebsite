@@ -15,6 +15,7 @@ import {
   ProjectContent,
   ResumeContent,
   SubstackContent,
+  TpmContent,
 } from './window-contents'
 import {
   FolderIcon,
@@ -24,6 +25,7 @@ import {
   RecycleIcon,
   ResumeIcon,
   SubstackIcon,
+  TpmIcon,
   UserIcon,
   WindowGlyph,
 } from './xp-icons'
@@ -34,6 +36,7 @@ type AppMeta = {
   width: number
   height: number
   accent?: string
+  bodyClassName?: string
   render: () => React.ReactNode
 }
 
@@ -52,6 +55,14 @@ function useApps(): Record<string, AppMeta> {
         width: 420,
         height: 380,
         render: () => <ContactContent />,
+      },
+      tpm: {
+        title: 'TPM — The Persian Magazine',
+        width: 620,
+        height: 700,
+        accent: '#c91f26',
+        bodyClassName: 'bg-white p-0 text-black',
+        render: () => <TpmContent />,
       },
       substack: {
         title: 'Substack — @typicaluser',
@@ -198,11 +209,14 @@ export function XpDesktop() {
 
   const desktopIcons = useMemo(
     () => [
-      ...projects.map((p) => ({
-        id: p.id,
-        label: p.shortName,
-        icon: <FolderIcon accent={p.accent} />,
-      })),
+      { id: 'tpm', label: 'TPM', icon: <TpmIcon /> },
+      ...projects
+        .filter((p) => p.id !== 'tpm-archive')
+        .map((p) => ({
+          id: p.id,
+          label: p.shortName,
+          icon: <FolderIcon accent={p.accent} />,
+        })),
       { id: 'resume', label: 'Resume', icon: <ResumeIcon /> },
       { id: 'substack', label: 'Substack', icon: <SubstackIcon /> },
       { id: 'paint', label: 'Paint', icon: <PaintIcon /> },
@@ -303,6 +317,7 @@ export function XpDesktop() {
             onFocus={() => focusWindow(w.id)}
             onClose={() => closeWindow(w.id)}
             onMinimize={() => minimizeWindow(w.id)}
+            bodyClassName={app.bodyClassName}
           >
             {app.render()}
           </XpWindow>
