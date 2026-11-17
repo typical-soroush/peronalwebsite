@@ -89,43 +89,22 @@ export function TpmContent() {
         </section>
       </aside>
 
-      <main className="min-w-0 bg-white p-4">
-        <header className="mb-5 flex items-start justify-between gap-3 border-b border-[#d7d7d7] pb-3">
-          <div>
-            <h1 className="text-sm font-bold text-[#123b77]">TPM</h1>
-            <p className="mt-1 text-[11px] text-[#666]">
-              Files and links from The Persian Magazine
-            </p>
-          </div>
-          <a
-            href="https://mxzkvc-ac.myshopify.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit TPM Shop on Shopify"
-            title="Visit TPM Shop"
-            className="block shrink-0 overflow-hidden rounded-sm border border-[#b8b8b8] bg-[#111] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0756a4]"
-          >
-            <video
-              src="/projects/tpm-issue-06.mp4"
-              className="size-14 bg-[#111] object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              aria-hidden="true"
-            />
-          </a>
+      <main className="min-w-0 bg-[#111] p-4 text-white">
+        <header className="mb-5 border-b border-neutral-700 pb-3">
+          <h1 className="text-sm font-bold text-white">TPM</h1>
+          <p className="mt-1 text-[11px] text-neutral-400">
+            Files and links from The Persian Magazine
+          </p>
         </header>
 
         <section aria-labelledby="tpm-files-heading">
           <h2
             id="tpm-files-heading"
-            className="mb-4 text-[12px] font-bold text-[#333]"
+            className="mb-4 text-[12px] font-bold text-neutral-200"
           >
             Files Stored on This Computer
           </h2>
-          <div className="grid grid-cols-2 gap-x-3 gap-y-5 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-x-3 gap-y-5">
             <button
               type="button"
               onClick={() =>
@@ -133,16 +112,35 @@ export function TpmContent() {
                   new CustomEvent('xp:open', { detail: 'tpm-archive' }),
                 )
               }
-              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-[#eaf2fc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0756a4]"
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
             >
               <FolderIcon size={40} />
               <span className="text-[11px]">TPM Archive</span>
             </button>
             <a
+              href="https://mxzkvc-ac.myshopify.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit TPM Shop on Shopify"
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
+            >
+              <video
+                src="/projects/tpm-issue-06.mp4"
+                className="size-20 rounded-sm bg-[#111] object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-hidden="true"
+              />
+              <span className="text-[11px]">TPM SHOP</span>
+            </a>
+            <a
               href="https://thepersianmag.net/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-[#eaf2fc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0756a4]"
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
             >
               <FolderIcon size={40} />
               <span className="text-[11px]">The Persian Magazine</span>
@@ -151,7 +149,7 @@ export function TpmContent() {
               href="https://www.instagram.com/thepersianmag/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-[#eaf2fc] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0756a4]"
+              className="flex min-w-0 flex-col items-center gap-1 rounded-sm p-2 text-center hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#8bb9f2]"
             >
               <FolderIcon size={40} />
               <span className="text-[11px]">Instagram @thepersianmag</span>
