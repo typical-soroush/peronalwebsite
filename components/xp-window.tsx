@@ -12,6 +12,7 @@ type XpWindowProps = {
   onFocus: () => void
   onClose: () => void
   onMinimize: () => void
+  bodyClassName?: string
   children: React.ReactNode
 }
 
@@ -24,6 +25,7 @@ export function XpWindow({
   onFocus,
   onClose,
   onMinimize,
+  bodyClassName,
   children,
 }: XpWindowProps) {
   const [pos, setPos] = useState({ x: initial.x, y: initial.y })
@@ -136,7 +138,9 @@ export function XpWindow({
       </div>
 
       {/* Body */}
-      <div className="xp-scroll flex-1 overflow-auto p-3 text-[13px] text-black">
+      <div
+        className={`xp-scroll flex-1 overflow-auto p-3 text-[13px] text-black ${bodyClassName ?? ''}`}
+      >
         {children}
       </div>
     </div>

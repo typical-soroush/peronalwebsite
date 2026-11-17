@@ -10,6 +10,7 @@ import {
   RecycleIcon,
   ResumeIcon,
   SubstackIcon,
+  TpmIcon,
   UserIcon,
 } from './xp-icons'
 
@@ -90,15 +91,23 @@ export function StartMenu({
           <p className="px-2 pb-1 text-[11px] font-bold text-neutral-500">
             My Products
           </p>
-          {projects.map((p) => (
-            <MenuItem
-              key={p.id}
-              icon={<FolderIcon size={30} accent={p.accent} />}
-              title={p.name}
-              subtitle={p.tagline}
-              onClick={() => go(p.id)}
-            />
-          ))}
+          <MenuItem
+            icon={<TpmIcon size={30} />}
+            title="TPM"
+            subtitle="The Persian Magazine"
+            onClick={() => go('tpm')}
+          />
+          {projects
+            .filter((p) => p.id !== 'tpm-archive')
+            .map((p) => (
+              <MenuItem
+                key={p.id}
+                icon={<FolderIcon size={30} accent={p.accent} />}
+                title={p.name}
+                subtitle={p.tagline}
+                onClick={() => go(p.id)}
+              />
+            ))}
         </div>
 
         {/* Right: places */}

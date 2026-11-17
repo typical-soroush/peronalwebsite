@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import type { Project } from '@/lib/projects'
+import { FolderIcon } from './xp-icons'
 
 function XpButton({
   children,
@@ -19,6 +20,84 @@ function XpButton({
     >
       {children}
     </a>
+  )
+}
+
+export function TpmContent() {
+  return (
+    <div className="flex min-h-full flex-col gap-4 bg-black p-4 text-white">
+      <div className="flex items-center justify-between gap-3">
+        <h1 className="text-lg font-bold tracking-wide">TPM</h1>
+        <a
+          href="https://thepersianmag.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit TPM Shop at The Persian Magazine"
+          title="Visit TPM Shop"
+          className="block rounded-sm bg-white p-1.5 transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          <img
+            src="/projects/tpm-logo.jpg"
+            alt="TPM Shop"
+            className="size-20 object-contain"
+          />
+        </a>
+      </div>
+
+      <video
+        className="max-h-[240px] w-full bg-black object-contain"
+        src="/projects/tpm-issue-06.mp4"
+        controls
+        playsInline
+        preload="metadata"
+        aria-label="TPM Issue 06 video"
+      />
+
+      <p className="leading-relaxed text-neutral-200">
+        At TPM, I make sure everything runs smoothly so we can focus on the
+        creative side. Some call me the COO, but I like to think of it as being
+        a handyman—from changing a lightbulb to setting up ClickUp workflows and
+        automating our systems. TPM SHOP is my favourite, though! From ideation
+        and product building all the way to marketing and fulfilment, I run it
+        all. It&apos;s like a toy store!
+      </p>
+
+      <div className="grid gap-2 sm:grid-cols-2">
+        <button
+          type="button"
+          onClick={() =>
+            window.dispatchEvent(
+              new CustomEvent('xp:open', { detail: 'tpm-archive' }),
+            )
+          }
+          className="flex items-center gap-3 rounded-sm border border-neutral-700 bg-neutral-950 p-3 text-left hover:border-neutral-400 hover:bg-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+        >
+          <FolderIcon size={42} />
+          <span className="flex flex-col">
+            <span className="font-bold">TPM Archive</span>
+            <span className="text-[11px] text-neutral-400">
+              Archive of The Persian Magazine
+            </span>
+          </span>
+        </button>
+        <a
+          href="https://thepersianmag.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center rounded-sm border border-neutral-700 bg-neutral-950 p-3 font-bold hover:border-neutral-400 hover:bg-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+        >
+          The Persian Magazine
+        </a>
+        <a
+          href="https://www.instagram.com/thepersianmag/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center rounded-sm border border-neutral-700 bg-neutral-950 p-3 font-bold hover:border-neutral-400 hover:bg-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+        >
+          Instagram @thepersianmag
+        </a>
+      </div>
+    </div>
   )
 }
 
